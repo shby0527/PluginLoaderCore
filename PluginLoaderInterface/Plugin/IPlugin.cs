@@ -17,5 +17,6 @@ namespace PluginLoader.Plugin
         /// 加载后调用,在Loading调用返回true后调用
         ///</summary>
         void Loaded();
+
     }
 }

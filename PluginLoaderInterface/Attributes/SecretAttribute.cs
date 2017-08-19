@@ -15,6 +15,7 @@ namespace PluginLoader.Attributes
             this.RSA = rsa;
             this.SHA512 = sha512;
             this.RSASHA512 = rsasha512;
+            this.IsDisableVail = false;
         }
 
         ///<summary>
@@ -37,6 +38,9 @@ namespace PluginLoader.Attributes
         ///</summary>
         public string SecretFile { get; set; }
 
-
+        ///<summary>
+        /// 标注是否忽略验证,默认false,不建议设置
+        ///</summary>
+        public bool IsDisableVail{get;set;}
     }
 }
