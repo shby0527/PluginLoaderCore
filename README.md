@@ -1,2 +1,3 @@
-# PluginLoaderCore
-PluginLoader Core 
+# 插件加载器
+------------
+用来实现运行时动态安全的载入程序集，实现一个简单的DI
