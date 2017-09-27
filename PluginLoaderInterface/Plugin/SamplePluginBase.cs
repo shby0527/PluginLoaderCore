@@ -1,5 +1,7 @@
 using System;
 
+using PluginLoader.Plugin.Common;
+
 namespace PluginLoader.Plugin
 {
     ///<summary>

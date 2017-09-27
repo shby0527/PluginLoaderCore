@@ -1,6 +1,6 @@
 using System;
 
-namespace PluginLoader.Plugin
+namespace PluginLoader.Plugin.Common
 {
     ///<summary>
     /// 通用插件接口
