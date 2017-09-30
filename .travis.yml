@@ -6,3 +6,4 @@ dist: trusty
 script:
     - dotnet restore
     - dotnet build -c Release
+    - dotnet test TestCase/TestCase.csproj
