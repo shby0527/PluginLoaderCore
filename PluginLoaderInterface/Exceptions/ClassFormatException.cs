@@ -8,7 +8,7 @@ namespace PluginLoader.Exceptions
         public ClassFormatException()
             : base("the Class was not normally")
         {
-            
+
         }
 
         public ClassFormatException(string message)
