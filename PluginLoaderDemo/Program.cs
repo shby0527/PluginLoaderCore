@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using PluginLoader.Plugin;
 
 namespace PluginLoaderDemo
@@ -6,8 +7,8 @@ namespace PluginLoaderDemo
     class Program
     {
         static void Main(string[] args)
-        {            
-            Console.WriteLine("Hello World!");
+        {
+            Console.ReadKey();
         }
     }
 }

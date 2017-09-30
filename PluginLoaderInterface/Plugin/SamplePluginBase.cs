@@ -15,14 +15,14 @@ namespace PluginLoader.Plugin
 
         }
 
-        public virtual bool Loading()
+        public virtual bool Loading(params object[] args)
         {
-            return true;
+            throw new NotSupportedException();
         }
 
         public virtual void Loaded()
         {
-
+            throw new NotSupportedException();
         }
 
         ///<summary>
@@ -30,7 +30,7 @@ namespace PluginLoader.Plugin
         ///</summary>
         public virtual void EntryPoint(params object[] args)
         {
-
+            throw new NotSupportedException();
         }
     }
 }

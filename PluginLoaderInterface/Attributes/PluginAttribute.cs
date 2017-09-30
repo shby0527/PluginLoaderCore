@@ -30,9 +30,9 @@ namespace PluginLoader.Attributes
 
         ///<summary>
         /// 是否需要懒加载
-        /// 即 是否 在载入插件后立即实例化
-        /// 如果为true，则在程序生命期内该插件始终保留同一个实例
-        /// 若为false，则每次需要时实例化插件，每次使用为不同的实例
+        /// 即 是否在载入插件后立即实例化
+        /// 如果为false，则在程序生命期内该插件始终保留同一个实例
+        /// 若为true，则每次需要时实例化插件，每次使用为不同的实例
         ///</summary>
         public bool IsLazyLoading { get; set; }
 
