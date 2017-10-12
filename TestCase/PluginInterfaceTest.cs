@@ -1,5 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PluginLoader.Extentions;
+using PluginLoader.Util;
+using PluginLoader.Plugin;
+using PluginLoader.Plugin.Common;
 using System;
 
 namespace TestCase
@@ -30,6 +33,25 @@ namespace TestCase
             TestPlugin testPlugin = new TestPlugin();
             var name = testPlugin.GetPluginAuthorName();
             Assert.AreEqual("TestCase", name);
+        }
+
+        [TestMethod]
+        public void UtilCheckImplementTest()
+        {
+            Type implemented = typeof(TestPlugin);
+            Type notimplemented = typeof(EntryPointNotFoundException);
+            Assert.AreEqual(PluginUtil.CheckImplement(implemented), true);
+            Assert.AreEqual(PluginUtil.CheckImplement(notimplemented), false);
+        }
+
+        [TestMethod]
+        public void UtilPluginTest()
+        {
+            IPluginFactory factory = new DefaultPluginFactory();
+            IPlugin plugin = factory.CreateInstance(typeof(TestPlugin));
+            SamplePluginBase pluginBase = factory.CreateInstance<SamplePluginBase>(typeof(TestPlugin));
+            Assert.IsNotNull(plugin);
+            Assert.IsNotNull(pluginBase);
         }
     }
 }
