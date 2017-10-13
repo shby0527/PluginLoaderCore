@@ -10,7 +10,7 @@ namespace PluginLoader.Plugin
     /// <summary>
     /// 默认创建器
     /// </summary>
-    public class DefaultPluginFactory : IPluginFactory
+    public class DefaultPluginFactory : IPluginFactory, IPluginFactory<SamplePluginBase>
     {
         /// <summary>
         /// 默认方法创建插件（使用无参构造方法）
@@ -27,14 +27,13 @@ namespace PluginLoader.Plugin
             return ins as IPlugin;
         }
 
-        public virtual T CreateInstance<T>(Type plugin)
-            where T : class, IPlugin
+        SamplePluginBase IPluginFactory<SamplePluginBase>.CreateInstance(Type plugin)
         {
             IPlugin ins = CreateInstance(plugin);
 
-            if (!(ins is T))
+            if (!(ins is SamplePluginBase))
                 throw new TypeConvertException();
-            return ins as T;
+            return ins as SamplePluginBase;
         }
     }
 }

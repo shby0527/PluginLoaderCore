@@ -47,9 +47,10 @@ namespace TestCase
         [TestMethod]
         public void UtilPluginTest()
         {
-            IPluginFactory factory = new DefaultPluginFactory();
-            IPlugin plugin = factory.CreateInstance(typeof(TestPlugin));
-            SamplePluginBase pluginBase = factory.CreateInstance<SamplePluginBase>(typeof(TestPlugin));
+            IPluginFactory<SamplePluginBase> factory = new DefaultPluginFactory();
+            IPluginFactory factory1 = factory;
+            IPlugin plugin = factory1.CreateInstance(typeof(TestPlugin));
+            SamplePluginBase pluginBase = factory.CreateInstance(typeof(TestPlugin));
             Assert.IsNotNull(plugin);
             Assert.IsNotNull(pluginBase);
         }
